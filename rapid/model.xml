@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<DomainModel xmlns="http://rapid.ossys.com"
+			 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			 xsi:schemaLocation="http://rapid.ossys.com http://rapid.ossys.com/domainmodel.xsd">
+
+<!-- User -->
+	<BusinessObject name="User" comment="" concurrent="true" atomic="true" auditable="true">
+
+		<!-- Email -->
+		<Attribute name="Email" persistent="true" type="TEXT" minsize="7" maxsize="50" comment="The user's email."
+					characterset="utf-8" required="true" validator="Email" />
+
+		<!-- First Name -->
+		<Attribute name="First Name" persistent="true" type="TEXT" minsize="2" maxsize="30" comment="The user's first name."
+					characterset="utf-8" required="true" />
+
+		<!-- Middle Name -->
+		<Attribute name="Middle Name" persistent="true" type="TEXT" minsize="2" maxsize="30" comment="The user's middle name."
+					characterset="utf-8" required="true" />
+
+		<!-- Last Name -->
+		<Attribute name="Last Name" persistent="true" type="TEXT" minsize="2" maxsize="30" comment="The user's last name."
+					characterset="utf-8" required="true" />
+
+		<!-- Password -->
+		<Attribute name="Password" persistent="true" type="TEXT" minsize="7" maxsize="20" comment="The user's password."
+					characterset="utf-8" required="true" encryption="SHA-512" />
+
+		<Key type="UNIQUE">
+			<Attribute name="Email" type="TEXT"/>
+		</Key>
+
+	</BusinessObject>
+
+</DomainModel>

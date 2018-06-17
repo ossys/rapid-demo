@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SystemModel xmlns="http://rapid.ossys.com"
+    		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    		 xsi:schemaLocation="http://rapid.ossys.com http://rapid.ossys.com/systemmodel.xsd"
+    		 key="xxxxxxxx" api="1" >
+    		  <!-- Replace key value with the key generated from your new project -->
+
+  <DataSource name="MongoDB3"
+  			type="MONGODB3"
+  			host="localhost"
+  			schema="demo"
+  			port="27017"
+  			username="demo"
+  			password="password" />
+
+  <DataSource name="MySQL"
+    type="MYSQL"
+    host="localhost"
+    schema="demo"
+    port="3306"
+    username="demo"
+    password="password" />
+
+  <!-- NodeJS - This will build a project based on Node and the Express Framework -->
+  <Project	name="NodeJS"
+      		buildtool="GULP" >
+
+  	<Domain name="Demo"
+  			src="rapid/model.xml"
+  			datasource="MongoDB3"
+  			language="NODEJS"
+  			framework="EXPRESS"
+  			orm="MONGOOSE"
+  			tester="MOCHA" />
+
+  </Project>
+
+<!--
+  <Project	name="Java"
+      		buildtool="MAVEN3">
+
+  	<Domain name="Demo"
+  			src="rapid/model.xml"
+        namespace="com.ossys.demo"
+  			datasource="MySQL"
+  			language="JAVA"
+  			framework="SPRING4"
+  			orm="JPA"
+  			tester="JUNIT" />
+
+  </Project>
+
+  <Project	name="CPP"
+      		buildtool="MAKEFILE" >
+
+  	<Domain name="Demo"
+  			src="rapid/model.xml"
+  			datasource="MongoDB3"
+  			language="C++"
+  			tester="GOOGLETEST" />
+
+  </Project>
+-->
+</SystemModel>
